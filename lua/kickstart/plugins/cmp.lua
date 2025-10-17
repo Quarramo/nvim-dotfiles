@@ -19,12 +19,16 @@ return {
 					-- `friendly-snippets` contains a variety of premade snippets.
 					--    See the README about individual language/framework/plugin snippets:
 					--    https://github.com/rafamadriz/friendly-snippets
-					-- {
-					--   'rafamadriz/friendly-snippets',
-					--   config = function()
-					--     require('luasnip.loaders.from_vscode').lazy_load()
-					--   end,
-					-- },
+					{
+						"rafamadriz/friendly-snippets",
+						config = function()
+							require("luasnip.loaders.from_vscode").lazy_load()
+						end,
+					},
+					{
+						-- load snippets from path/of/your/nvim/config/my-cool-snippets
+						require("luasnip.loaders.from_vscode").lazy_load({ paths = { "./snippets/markdown.snippets" } }),
+					},
 				},
 			},
 			"saadparwaiz1/cmp_luasnip",
